@@ -1,12 +1,19 @@
 import React from 'react';
-import SignIn from './sign-in';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Homepage from './homepage';
+import SignInPage from './SignInPage'; // Use the wrapper
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <SignIn />
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/sign-in" element={<SignInPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
